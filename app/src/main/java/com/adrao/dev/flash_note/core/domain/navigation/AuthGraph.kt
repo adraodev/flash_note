@@ -3,13 +3,13 @@ package com.adrao.dev.flash_note.core.domain.navigation
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object AuthGraph {
-    @Serializable
-    data object Login
+open class AuthGraph
 
-    @Serializable
-    data object Register
+@Serializable
+object Login : AuthGraph()
 
-    @Serializable
-    data object ForgotPassword
-}
+@Serializable
+object Register : AuthGraph()
+
+@Serializable
+object ForgotPassword : AuthGraph()
