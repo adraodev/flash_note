@@ -1,6 +1,5 @@
-package com.adrao.dev.flash_note.ui.theme
+package com.adrao.dev.flash_note.core.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

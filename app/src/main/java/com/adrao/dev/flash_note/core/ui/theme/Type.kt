@@ -1,4 +1,4 @@
-package com.adrao.dev.flash_note.ui.theme
+package com.adrao.dev.flash_note.core.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

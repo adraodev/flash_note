@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.serialization)
 }
 
 android {
@@ -38,8 +39,8 @@ android {
         enableStrongSkippingMode = true
     }
     kotlin {
-        sourceSets.all{
-            languageSettings{
+        sourceSets.all {
+            languageSettings {
                 enableLanguageFeature("ExplicitBackingFields")
             }
         }

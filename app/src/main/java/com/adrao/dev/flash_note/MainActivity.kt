@@ -4,14 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.adrao.dev.flash_note.ui.theme.Flash_noteTheme
+import androidx.navigation.compose.rememberNavController
+import com.adrao.dev.flash_note.core.domain.ui.RootNavHost
+import com.adrao.dev.flash_note.core.ui.theme.Flash_noteTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +14,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Flash_noteTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val rootNavController = rememberNavController()
+                RootNavHost(rootNavHostController = rootNavController)
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Flash_noteTheme {
-        Greeting("Android")
     }
 }
